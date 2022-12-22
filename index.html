@@ -1,0 +1,74 @@
+<head>
+    <title>Encriptado</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+</head>
+<body class="cuerpo">
+    <header>
+        <div>
+            <img src="imagenes/Logo.png" alt="logo">
+        </div>
+    </header>
+    <script>
+        function encriptar(){
+            document.getElementById("muneco").style.display = "none";
+            document.getElementById("primer-texto").style.display = "none";
+            document.getElementById("segundo-texto").style.display = "none";
+            document.getElementById("txtout").style.display = "inline";
+            document.getElementById("btncopiar").style.display = "inline";
+            var textocapturado = document.getElementById("txtin").value;
+            const mapper = {
+             a: 'ai', e: 'enter', i: 'imes', o: 'ober', u: 'ufat',
+            }
+            textoresultado=textocapturado.replace(/[aeiou]/gi, match => mapper[match]);
+            document.getElementById("txtout").innerHTML = textoresultado;
+        }
+        function desencriptar(){
+            document.getElementById("muneco").style.display = "none";
+            document.getElementById("primer-texto").style.display = "none";
+            document.getElementById("segundo-texto").style.display = "none";
+            document.getElementById("txtout").style.display = "inline";
+            document.getElementById("btncopiar").style.display = "inline";
+            var textocapturado = document.getElementById("txtin").value;
+            var txtencr = textocapturado.replace(/ai/img, "a");
+            var txtencr = txtencr.replace(/enter/img, "e");
+            var txtencr = txtencr.replace(/imes/img, "i");
+            var txtencr = txtencr.replace(/ober/img, "o");
+            var txtencr = txtencr.replace(/ufat/img, "u");
+            document.getElementById("txtout").innerHTML = txtencr;
+        }
+        function copiar(){
+            var contenido = document.createElement("input");
+            contenido.setAttribute("value", document.getElementById("txtout").innerHTML);
+            document.body.appendChild(contenido);
+            contenido.select();
+            document.execCommand("copy");
+            document.body.removeChild(contenido);
+        }
+    </script>
+    <div>
+        <input class="textoingresado" id="txtin" type="text" placeholder="Ingrese su texto aquí">
+    </div>
+
+    <div class="acciones">
+        <button class="botones" id="btnencriptar" onclick="encriptar()">Encriptar</button>
+        <button class="botones" id="btndesencriptar" onclick="desencriptar()">Desencriptar</button>
+    </div>
+
+    <div class="sidesection">
+        <img src="imagenes/dibujo.png" alt="dibujo" class="muneco" id="muneco">
+        <p class="primer-texto" id="primer-texto">Ningún mensaje fue encriptado</p>
+        <p class="segunto-texto" id="segundo-texto">Ingresa el mensaje que deseas desencriptar</p>
+        <p class="texto-desencriptado" id="txtout"></p>
+        <button class="botones" id="btncopiar" onclick="copiar()">Copiar</button>
+    </div>
+    
+    <footer>
+        
+    </footer>
+</body>

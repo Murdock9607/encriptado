@@ -1,0 +1,93 @@
+header{
+    margin: 25px;
+}
+body{
+    font-family: 'Inter', sans-serif;
+    background: #F3F5FC;
+}
+.textoingresado{
+    width: 530px;
+    margin: 20px 150px;
+    padding: 10px 25px;
+    font-family: 'Inter', sans-serif;
+    color: #0A3871;
+    font-size: 35px;
+    font-weight: bold;
+    background: #F3F5FC;
+    border: none;
+    border-color: transparent;
+    text-align: left;
+    vertical-align: top;
+}
+.textoingresado ::placeholder{
+    color: #0A3871;
+    opacity: 1;
+}
+.acciones{
+    margin: 300px 10px 20px 170px;
+}
+.botones{
+    width: 240px;
+    padding: 10px 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    border: 1px solid #0A3871;
+    margin: 10px;
+    border-radius: 10px;
+}
+.sidesection{
+    position: absolute;
+    right: 100px;
+    top: 25px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: white;
+    padding: 120px 0px;
+    width: 25%;
+    height: 55%;
+}
+.sidesection p{
+    text-align: center;
+    margin: 10px auto;
+}
+.primer-texto{
+    font-weight: bold;
+}
+.texto-desencriptado{
+    margin: auto 10%;
+    display: none;
+}
+#btncopiar{
+    display: none;
+    text-align: center;
+    background: white;
+    color: #0A3871;
+    position: absolute;
+    bottom: 5%;
+    left: 15%;
+    /*margin: 280px 10px 20px 50px;*/
+}
+#btnencriptar{
+    background: #0A3871;
+    color: #F3F5FC;
+}
+#btndesencriptar{
+    background: #F3F5FC;
+    color: #0A3871;
+}
+@media screen and (max-width: 480px){
+    .textoingresado, .acciones{
+        width: auto;
+    }
+    .sidesection{
+        position: static;
+        width: auto;
+        height: auto;
+    }
+    .sidesection img{
+        display: none;
+    }
+    #btncopiar{
+        position: fixed;
+    }
+}
